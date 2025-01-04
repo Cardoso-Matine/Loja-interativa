@@ -1,0 +1,132 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin: 20px 0;
+}
+
+/* Seções */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+/* Lista de produtos */
+ul#produtos {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+ul#produtos li {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+ul#produtos li h3 {
+    color: #4CAF50;
+}
+
+ul#produtos li p {
+    margin: 10px 0;
+}
+
+ul#produtos li button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+ul#produtos li button:hover {
+    background: #45a049;
+}
+
+/* Carrinho de compras */
+#carrinho {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#carrinho div {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#carrinho div button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#carrinho div button:hover {
+    background: #e53935;
+}
+
+/* Total e botão de finalizar */
+#total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    display: block;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+    font-size: 0.9rem;
+}

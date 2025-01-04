@@ -1,0 +1,100 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Interativa</title>
+    <link rel="stylesheet" href="{% static 'clientes/styles.css' %}">
+</head>
+<body>
+    <h1>Bem-vindo à Loja Interativa</h1>
+
+    <!-- Lista de produtos -->
+    <h2>Produtos Disponíveis</h2>
+    <ul id="produtos">
+        <li>
+            <h3>Produto 1</h3>
+            <p>Descrição: Um produto incrível!</p>
+            <p>Preço: R$ <span class="preco">50.00</span></p>
+            <button onclick="adicionarAoCarrinho('Produto 1', 50.00)">Adicionar ao Carrinho</button>
+        </li>
+        <li>
+            <h3>Produto 2</h3>
+            <p>Descrição: Outro produto incrível!</p>
+            <p>Preço: R$ <span class="preco">100.00</span></p>
+            <button onclick="adicionarAoCarrinho('Produto 2', 100.00)">Adicionar ao Carrinho</button>
+        </li>
+        <li>
+            <h3>Produto 3</h3>
+            <p>Descrição: Produto imperdível!</p>
+            <p>Preço: R$ <span class="preco">150.00</span></p>
+            <button onclick="adicionarAoCarrinho('Produto 3', 150.00)">Adicionar ao Carrinho</button>
+        </li>
+    </ul>
+
+    <!-- Carrinho de compras -->
+    <h2>Carrinho de Compras</h2>
+    <div id="carrinho">
+        <p>Nenhum produto no carrinho.</p>
+    </div>
+    <h3>Total: R$ <span id="total">0.00</span></h3>
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+
+    <!-- Script para funcionalidade -->
+    <script>
+        const carrinho = [];
+        const carrinhoDiv = document.getElementById('carrinho');
+        const totalSpan = document.getElementById('total');
+
+        function atualizarCarrinho() {
+            // Limpa o carrinho atual
+            carrinhoDiv.innerHTML = '';
+
+            if (carrinho.length === 0) {
+                carrinhoDiv.innerHTML = '<p>Nenhum produto no carrinho.</p>';
+                totalSpan.textContent = '0.00';
+                return;
+            }
+
+            // Adiciona os itens do carrinho
+            let total = 0;
+            carrinho.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.innerHTML = `
+                    <p>${item.nome} - R$ ${item.preco.toFixed(2)} 
+                    <button onclick="removerDoCarrinho(${index})">Remover</button></p>
+                `;
+                carrinhoDiv.appendChild(itemDiv);
+                total += item.preco;
+            });
+
+            // Atualiza o total
+            totalSpan.textContent = total.toFixed(2);
+        }
+
+        function adicionarAoCarrinho(nome, preco) {
+            carrinho.push({ nome, preco });
+            atualizarCarrinho();
+        }
+
+        function removerDoCarrinho(index) {
+            carrinho.splice(index, 1);
+            atualizarCarrinho();
+        }
+
+        function finalizarCompra() {
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+
+            alert(`Compra finalizada! Total: R$ ${totalSpan.textContent}`);
+            carrinho.length = 0; // Limpa o carrinho
+            atualizarCarrinho();
+        }
+    </script>
+</body>
+</html>
