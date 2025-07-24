@@ -1,4 +1,4 @@
-/* Estilo geral */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,14 +8,14 @@ body {
     line-height: 1.6;
 }
 
-/* Cabeçalho */
+
 h1 {
     text-align: center;
     color: #4CAF50;
     margin: 20px 0;
 }
 
-/* Seções */
+
 h2 {
     color: #333;
     text-align: center;
@@ -23,7 +23,6 @@ h2 {
     text-transform: uppercase;
 }
 
-/* Lista de produtos */
 ul#produtos {
     list-style: none;
     padding: 0;
@@ -65,7 +64,7 @@ ul#produtos li button:hover {
     background: #45a049;
 }
 
-/* Carrinho de compras */
+
 #carrinho {
     background: #fff;
     border: 1px solid #ddd;
@@ -97,7 +96,7 @@ ul#produtos li button:hover {
     background: #e53935;
 }
 
-/* Total e botão de finalizar */
+
 #total {
     font-size: 1.5rem;
     font-weight: bold;
@@ -123,7 +122,6 @@ button:hover {
     background: #45a049;
 }
 
-/* Rodapé */
 footer {
     text-align: center;
     margin-top: 20px;
