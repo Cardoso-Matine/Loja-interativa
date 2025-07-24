@@ -12,7 +12,7 @@
 <body>
     <h1>Bem-vindo à Loja Interativa</h1>
 
-    <!-- Lista de produtos -->
+    
     <h2>Produtos Disponíveis</h2>
     <ul id="produtos">
         <li>
@@ -35,7 +35,7 @@
         </li>
     </ul>
 
-    <!-- Carrinho de compras -->
+    
     <h2>Carrinho de Compras</h2>
     <div id="carrinho">
         <p>Nenhum produto no carrinho.</p>
@@ -43,14 +43,14 @@
     <h3>Total: R$ <span id="total">0.00</span></h3>
     <button onclick="finalizarCompra()">Finalizar Compra</button>
 
-    <!-- Script para funcionalidade -->
+    
     <script>
         const carrinho = [];
         const carrinhoDiv = document.getElementById('carrinho');
         const totalSpan = document.getElementById('total');
 
         function atualizarCarrinho() {
-            // Limpa o carrinho atual
+            
             carrinhoDiv.innerHTML = '';
 
             if (carrinho.length === 0) {
@@ -59,7 +59,7 @@
                 return;
             }
 
-            // Adiciona os itens do carrinho
+            
             let total = 0;
             carrinho.forEach((item, index) => {
                 const itemDiv = document.createElement('div');
@@ -71,7 +71,7 @@
                 total += item.preco;
             });
 
-            // Atualiza o total
+            
             totalSpan.textContent = total.toFixed(2);
         }
 
@@ -92,7 +92,7 @@
             }
 
             alert(`Compra finalizada! Total: R$ ${totalSpan.textContent}`);
-            carrinho.length = 0; // Limpa o carrinho
+            carrinho.length = 0; 
             atualizarCarrinho();
         }
     </script>
